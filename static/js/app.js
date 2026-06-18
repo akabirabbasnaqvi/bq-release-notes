@@ -43,7 +43,7 @@ const toastMsg = document.getElementById('toast-message');
 
 // Twiter Character Limit constants
 const TWITTER_CHAR_LIMIT = 280;
-const T.CO_LINK_LENGTH = 23; // Twitter shortens all URLs to 23 chars
+const TCO_LINK_LENGTH = 23; // Twitter shortens all URLs to 23 chars
 
 // Temp storage for active tweet item
 let activeTweetLink = '';
@@ -425,7 +425,7 @@ function openTweetModal(date, type, plainText, sourceLink) {
     
     // Calculate remaining char space for text, leaving space for the link
     // Account for spaces and "..." if we truncate
-    const linkLength = T.CO_LINK_LENGTH;
+    const linkLength = TCO_LINK_LENGTH;
     const prefixLength = defaultTweet.length;
     const availableLength = TWITTER_CHAR_LIMIT - prefixLength - linkLength - 4; // -4 for " ... "
     
@@ -451,7 +451,7 @@ function hideModal() {
 
 function updateCharCount() {
     const textLength = tweetTextarea.value.length;
-    const totalLength = textLength + T.CO_LINK_LENGTH + 1; // +1 for space between text and link
+    const totalLength = textLength + TCO_LINK_LENGTH + 1; // +1 for space between text and link
     const remaining = TWITTER_CHAR_LIMIT - totalLength;
     
     charCounter.textContent = remaining;
