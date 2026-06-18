@@ -1,3 +1,5 @@
+from wsgiref import headers
+
 from flask import Flask, render_template, jsonify, request
 import feedparser
 from bs4 import BeautifulSoup
@@ -19,7 +21,10 @@ CACHE_DURATION = 600  # 10 minutes in seconds
 def parse_release_notes():
     """Fetches and parses the BigQuery release notes Atom feed."""
     # Using requests to fetch first to ensure we can specify a timeout
-    response = requests.get(FEED_URL, timeout=15)
+    headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+    }
+    response = requests.get(FEED_URL, headers=headers, timeout=15)
     response.raise_for_status()
     
     feed = feedparser.parse(response.content)
