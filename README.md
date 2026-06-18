@@ -4,6 +4,12 @@ A beautiful, modern web application built with a **Python Flask** backend and a 
 
 ---
 
+
+## 📸 Screenshot
+![App Screenshot](assets/screenshot.png)
+![App Screenshot](assets/screenshot2.png)
+
+
 ## 🌟 Key Features
 
 * **Sub-Entry RSS Parser**: Google Cloud groups daily release updates into a single feed item. This application uses `BeautifulSoup` to split daily logs into individual updates grouped by category (`Feature`, `Announcement`, `Change`, `Issue`, `Breaking`).
